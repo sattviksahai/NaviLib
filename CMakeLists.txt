@@ -3,8 +3,12 @@ cmake_minimum_required(VERSION 3.0)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 project(navilib)
-file(GLOB_RECURSE navlib_SOURCES "lib/*.cpp")
-file(GLOB_RECURSE navlib_HEADERS "lib/*.hpp")
+file(GLOB_RECURSE navlib_SOURCES "NaviLibFiles/*.cpp")
+file(GLOB_RECURSE navlib_HEADERS "NaviLibFiles/*.hpp")
+
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build/bin)
 
 set (navlib_INCLUDE_DIRS "")
 foreach (_headerFile ${navlib_HEADERS})
